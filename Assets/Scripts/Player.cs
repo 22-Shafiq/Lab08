@@ -14,12 +14,30 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKey(KeyCode.W))
+        {
+        if(transform.position.y < 4.86 )// transform.position.y >= -2.88)
+        {
+            transform.position += transform.up * speed * Time.deltaTime;
+            //float verticalInput = Input.GetAxis("Vertical");
 
-        float verticalInput = Input.GetAxis("Vertical");
+            //transform.position = transform.position + new Vector3(0 , verticalInput * speed * Time.deltaTime, 0);
+        } 
 
-        transform.position = transform.position + new Vector3(0 , verticalInput * speed * Time.deltaTime, 0);
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            if ( transform.position.y >= -2.88)
+            {
+                transform.position -= transform.up * speed * Time.deltaTime;
+                //float verticalInput = Input.GetAxis("Vertical");
 
-      
+                //transform.position = transform.position + new Vector3(0 , verticalInput * speed * Time.deltaTime, 0);
+            }
+
+        }
+
+
 
     }
 }
